@@ -5,7 +5,7 @@
 # ================================================================================================
 ## Update Repositories
 sudo yum update -y
-sudo amazon-linux-extras install docker
+sudo amazon-linux-extras install docker -y
 
 ## Autostart Docker
 sudo service docker start
@@ -25,5 +25,5 @@ docker info > ~/docker.log
 docker-compose version > ~/docker-compose.log
 
 ## Adding Custom Sysctl
-echo 'vm.max_map_count=524288' >> /etc/sysctl.conf
-echo 'fs.file-max=131072' >> /etc/sysctl.conf
+sudo echo 'vm.max_map_count=524288' >> /etc/sysctl.conf
+sudo echo 'fs.file-max=131072' >> /etc/sysctl.conf
