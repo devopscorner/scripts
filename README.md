@@ -1,6 +1,6 @@
 # Installer Scripts
 
-Number of installer scripts for userdata pipeline
+Number of installer scripts for userdata pipeline in Amazon Linux. For Ubuntu distribution, will use [this](https://github.com/devopscorner/devopscorner-container/tree/main/scripts) repository.
 
 ## Copyright
 

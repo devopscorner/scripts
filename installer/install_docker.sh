@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # ================================================================================================
-#  INSTALL DOCKER  (AMAZON LINUX)
+#  INSTALL DOCKER (AMAZON LINUX)
 # ================================================================================================
 ## Update Repositories
 sudo yum update -y
@@ -27,3 +27,8 @@ docker-compose version > ~/docker-compose.log
 ## Adding Custom Sysctl
 sudo echo 'vm.max_map_count=524288' >> /etc/sysctl.conf
 sudo echo 'fs.file-max=131072' >> /etc/sysctl.conf
+
+## Create Temporary Folders
+sudo mkdir -p /opt/data/docker/portainer2.9
+sudo mkdir -p /opt/data/docker/postgresql/pgdata
+sudo chmod 777 -R /opt/data/docker/

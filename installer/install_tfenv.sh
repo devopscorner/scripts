@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # ================================================================================================
-#  INSTALL TERRAFORM ENVIRONMENT
+#  INSTALL TERRAFORM ENVIRONMENT (AMAZON LINUX)
 # ================================================================================================
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >>~/.bash_profile
