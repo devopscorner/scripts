@@ -1,0 +1,20 @@
+[
+  {
+    "Classification": "spark-env",
+    "Configurations": [
+      {
+        "Classification": "export",
+        "Properties": {
+          "PYSPARK_PYTHON": "/usr/bin/python3"
+        }
+      }
+    ],
+    "Properties": {}
+  },
+  {
+    "Classification": "emrfs-site",
+    "Properties": {
+      "fs.s3.consistent": "true"
+    }
+  }
+]
