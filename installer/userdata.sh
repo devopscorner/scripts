@@ -61,10 +61,10 @@ python3 -m pip install pip==21.3.1 &&
 ## install tfenv
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >>~/.bash_profile
-ln -s ~/.tfenv/bin/* /usr/local/bin
+ln -sf ~/.tfenv/bin/* /usr/local/bin
 mkdir -p ~/.local/bin/
 . ~/.profile
-ln -s ~/.tfenv/bin/* ~/.local/bin
+ln -sf ~/.tfenv/bin/* ~/.local/bin
 
 ## Set Locale
 sudo echo 'LANG=en_US.utf-8' >>/etc/environment
