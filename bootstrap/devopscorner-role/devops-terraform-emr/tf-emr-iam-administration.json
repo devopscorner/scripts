@@ -1,0 +1,74 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole",
+                "iam:PassRole",
+                "iam:CreateGroup",
+                "iam:DeleteGroup",
+                "iam:UpdateGroup",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:UpdateRole",
+                "iam:GetGroup"
+            ],
+            "Resource": [
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:role/EMR_ServiceRole*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:role/EMR_ServiceRole*/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:role/EC2_InstanceProfile*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:group/EMR_ServiceRole*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:group/EMR_ServiceRole*/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListRoleTags",
+                "iam:ListPolicyVersions",
+                "iam:ListGroupPolicies",
+                "iam:ListPoliciesGrantingServiceAccess",
+                "iam:ListPolicyTags",
+                "iam:ListRolePolicies"
+            ],
+            "Resource": [
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:policy/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:user/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:role/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:group/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListInstanceProfilesForRole",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListAttachedUserPolicies",
+                "iam:ListInstanceProfileTags",
+                "iam:ListAttachedGroupPolicies",
+                "iam:ListInstanceProfiles"
+            ],
+            "Resource": [
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:user/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:instance-profile/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:role/*",
+                "arn:aws:iam::YOUR_AWS_ACCOUNT:group/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListPolicies",
+                "iam:ListRoles",
+                "iam:ListUsers",
+                "iam:ListGroups"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
