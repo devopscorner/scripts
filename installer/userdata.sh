@@ -25,10 +25,20 @@ sudo yum install -y \
     tmux \
     mc \
     vim \
+    ruby \
     python3 \
     python2.7
 
+# ================================================================================================
+#  INSTALL DOCKER (Amazon Linux)
+# ================================================================================================
 sudo amazon-linux-extras install docker
+
+# ================================================================================================
+#  INSTALL DOCKER-COMPOSE
+# ================================================================================================
+sudo curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m) -o $DOCKER_COMPOSE_PATH
+sudo chmod +x /usr/bin/docker-compose
 
 # install terraform
 wget -O terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
@@ -66,22 +76,27 @@ mkdir -p ~/.local/bin/
 . ~/.profile
 ln -sf ~/.tfenv/bin/* ~/.local/bin
 
-## Set Locale
-sudo echo 'LANG=en_US.utf-8' >>/etc/environment
-sudo echo 'LC_ALL=en_US.utf-8' >>/etc/environment
-
 ##### CUSTOMIZE ~/.profile #####
 echo '' >>~/.profile
 echo '### Docker ###
 export DOCKER_CLIENT_TIMEOUT=300
 export COMPOSE_HTTP_TIMEOUT=300' >>~/.profile
 
-## Adding Custom Sysctl
-sudo echo 'vm.max_map_count=524288' >>/etc/sysctl.conf
-sudo echo 'fs.file-max=131072' >>/etc/sysctl.conf
-
 ##### CONFIGURE DOCKER #####
 sudo usermod -a -G docker ec2-user
 
 sudo ln -snf $DOCKER_PATH /usr/bin/dock
 sudo ln -snf $DOCKER_COMPOSE_PATH /usr/bin/dcomp
+
+##### CONFIGURE CodeDeploy #####
+wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+chmod +x ./install
+./install auto
+
+## Set Locale
+sudo echo 'LANG=en_US.utf-8' >>/etc/environment
+sudo echo 'LC_ALL=en_US.utf-8' >>/etc/environment
+
+## Adding Custom Sysctl
+sudo echo 'vm.max_map_count=524288' >>/etc/sysctl.conf
+sudo echo 'fs.file-max=131072' >>/etc/sysctl.conf
