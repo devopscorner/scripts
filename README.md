@@ -5,7 +5,7 @@
 ![download all](https://img.shields.io/github/downloads/devopscorner/scripts/total.svg)
 ![download latest](https://img.shields.io/github/downloads/devopscorner/scripts/1.0/total)
 ![view](https://views.whatilearened.today/views/github/devopscorner/scripts.svg)
-![clone](https://img.shields.io/badge/dynamic/json?color=success&label=clone&query=count&url=https://github.com/devopscorner/scripts/blob/master/clone.json?raw=True&logo=github)
+![clone](https://img.shields.io/badge/dynamic/json?color=success&label=clone&query=count&url=https://github.com/devopscorner/scripts/blob/main/clone.json?raw=True&logo=github)
 ![issues](https://img.shields.io/github/issues/devopscorner/scripts)
 ![pull requests](https://img.shields.io/github/issues-pr/devopscorner/scripts)
 ![forks](https://img.shields.io/github/forks/devopscorner/scripts)
